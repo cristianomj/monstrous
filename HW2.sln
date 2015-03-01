@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bugs", "Bugs\Bugs.vcxproj", "{BA25DE62-784B-4A2C-9FC0-115872D53819}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PoseurSpriteTypesImporter", "PoseurSpriteTypesImporter\PoseurSpriteTypesImporter.vcxproj", "{776F7C61-3F11-4273-8C3D-3A01A71E8173}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SimpleSideScrollerFramework", "SimpleSideScrollerFramework\SimpleSideScrollerFramework.vcxproj", "{6A8E84CB-7249-4DD5-AD55-E152664974FD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "tinyxml", "tinyxml\tinyxml.vcxproj", "{2AEC47B4-9FE4-41EE-B16D-5837AD405AF8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TMXMapImporter", "TMXMapImporter\TMXMapImporter.vcxproj", "{7215E9B2-0F34-4930-B806-1717B7FC78C0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XMLFileImporter", "XMLFileImporter\XMLFileImporter.vcxproj", "{63AEE7BB-3881-480C-AC34-DA38C98F0F1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA25DE62-784B-4A2C-9FC0-115872D53819}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BA25DE62-784B-4A2C-9FC0-115872D53819}.Debug|Win32.Build.0 = Debug|Win32
+		{BA25DE62-784B-4A2C-9FC0-115872D53819}.Release|Win32.ActiveCfg = Release|Win32
+		{BA25DE62-784B-4A2C-9FC0-115872D53819}.Release|Win32.Build.0 = Release|Win32
+		{776F7C61-3F11-4273-8C3D-3A01A71E8173}.Debug|Win32.ActiveCfg = Debug|Win32
+		{776F7C61-3F11-4273-8C3D-3A01A71E8173}.Debug|Win32.Build.0 = Debug|Win32
+		{776F7C61-3F11-4273-8C3D-3A01A71E8173}.Release|Win32.ActiveCfg = Release|Win32
+		{776F7C61-3F11-4273-8C3D-3A01A71E8173}.Release|Win32.Build.0 = Release|Win32
+		{6A8E84CB-7249-4DD5-AD55-E152664974FD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A8E84CB-7249-4DD5-AD55-E152664974FD}.Debug|Win32.Build.0 = Debug|Win32
+		{6A8E84CB-7249-4DD5-AD55-E152664974FD}.Release|Win32.ActiveCfg = Release|Win32
+		{6A8E84CB-7249-4DD5-AD55-E152664974FD}.Release|Win32.Build.0 = Release|Win32
+		{2AEC47B4-9FE4-41EE-B16D-5837AD405AF8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2AEC47B4-9FE4-41EE-B16D-5837AD405AF8}.Debug|Win32.Build.0 = Debug|Win32
+		{2AEC47B4-9FE4-41EE-B16D-5837AD405AF8}.Release|Win32.ActiveCfg = Release|Win32
+		{2AEC47B4-9FE4-41EE-B16D-5837AD405AF8}.Release|Win32.Build.0 = Release|Win32
+		{7215E9B2-0F34-4930-B806-1717B7FC78C0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7215E9B2-0F34-4930-B806-1717B7FC78C0}.Debug|Win32.Build.0 = Debug|Win32
+		{7215E9B2-0F34-4930-B806-1717B7FC78C0}.Release|Win32.ActiveCfg = Release|Win32
+		{7215E9B2-0F34-4930-B806-1717B7FC78C0}.Release|Win32.Build.0 = Release|Win32
+		{63AEE7BB-3881-480C-AC34-DA38C98F0F1E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{63AEE7BB-3881-480C-AC34-DA38C98F0F1E}.Debug|Win32.Build.0 = Debug|Win32
+		{63AEE7BB-3881-480C-AC34-DA38C98F0F1E}.Release|Win32.ActiveCfg = Release|Win32
+		{63AEE7BB-3881-480C-AC34-DA38C98F0F1E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

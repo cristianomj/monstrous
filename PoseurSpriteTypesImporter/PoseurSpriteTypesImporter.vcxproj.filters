@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{974a23dc-756c-4bde-ae29-55a3a6bfb7a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\psti">
+      <UniqueIdentifier>{9ed2fc5d-1f55-4cad-8a33-7e6832c363a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\psti_VS">
+      <UniqueIdentifier>{c1d3cee2-931f-4d11-b342-d38ec97b8853}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\psti_VS\ReadMe.txt">
+      <Filter>src\psti_VS</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\psti_VS\stdafx.cpp">
+      <Filter>src\psti_VS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psti\PoseurSpriteTypesImporter.cpp">
+      <Filter>src\psti</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\psti_VS\stdafx.h">
+      <Filter>src\psti_VS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\psti\PoseurSpriteTypesImporter.h">
+      <Filter>src\psti</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

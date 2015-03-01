@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e05eeb07-71bc-4109-a5ad-4cc9977b59f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tinyxml">
+      <UniqueIdentifier>{383a413b-4fe3-49f9-b946-4fea9002d156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\tinyxml_VS">
+      <UniqueIdentifier>{b505a6cc-4725-4c53-ad1f-6a7fad6c9f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{f67b16dc-591d-4e66-84b7-2de5a2fe119b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\tinyxml\tinystr.cpp">
+      <Filter>src\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml\tinyxml.cpp">
+      <Filter>src\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml\tinyxmlerror.cpp">
+      <Filter>src\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml\tinyxmlparser.cpp">
+      <Filter>src\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml\xmltest.cpp">
+      <Filter>src\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tinyxml_VS\stdafx.cpp">
+      <Filter>src\tinyxml_VS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\tinyxml\tinystr.h">
+      <Filter>src\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tinyxml\tinyxml.h">
+      <Filter>src\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tinyxml_VS\stdafx.h">
+      <Filter>src\tinyxml_VS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tinyxml_VS\targetver.h">
+      <Filter>src\tinyxml_VS</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\tinyxml_VS\ReadMe.txt">
+      <Filter>src\tinyxml_VS</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="data\utf8test.xml">
+      <Filter>data</Filter>
+    </Xml>
+    <Xml Include="data\utf8testverify.xml">
+      <Filter>data</Filter>
+    </Xml>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{eaaecd34-ed99-4856-bf86-037892d695cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\bugs">
+      <UniqueIdentifier>{dbc5bd72-2c4e-4ef7-8060-46f090ce1522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\bugs_VS">
+      <UniqueIdentifier>{78e59404-09f1-49cd-909c-54625f0f12b6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\bugs\BugsButtonEventHandler.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsCollisionListener.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsDataLoader.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsGame.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsKeyEventHandler.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsMouseEventHandler.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs\BugsTextGenerator.cpp">
+      <Filter>src\bugs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bugs_VS\stdafx.cpp">
+      <Filter>src\bugs_VS</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\bugs\BugsButtonEventHandler.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsCollisionListener.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsDataLoader.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsGame.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsKeyEventHandler.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsMouseEventHandler.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs\BugsTextGenerator.h">
+      <Filter>src\bugs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs_VS\Resource.h">
+      <Filter>src\bugs_VS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs_VS\stdafx.h">
+      <Filter>src\bugs_VS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bugs_VS\targetver.h">
+      <Filter>src\bugs_VS</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\bugs_VS\ReadMe.txt">
+      <Filter>src\bugs_VS</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
