@@ -186,6 +186,43 @@ void SpriteManager::update(Game *game)
 		botIterator++;
 	}
 
+	// MODIFIED: VIEWPORT FOLLOWS AVATAR
+	GameGUI *gui = game->getGUI();
+	Viewport *viewport = gui->getViewport();
+
+	if (player.getCurrentState() != L"IDLE") {
+
+		int playerCenterX = player.getBoundingVolume()->getCenterX();
+		int playerCenterY = player.getBoundingVolume()->getCenterY();
+
+		// MOVE VIEWPORT TO WHERE PLAYER IS
+		if (!viewport->isInsideViewport(playerCenterX, playerCenterY)) {
+			int viewportCenterX = viewport->getViewportCenterX();
+			int viewportCenterY = viewport->getViewportCenterY();
+
+			int incX = 0, incY = 0;
+			int v = 20;
+
+			int difX = playerCenterX - viewportCenterX;
+			int difY = playerCenterY - viewportCenterY;
+			
+			if (difX > v) incX = v;
+			else if (difX < -v) incX = -v;
+
+			if (difY > v) incY = v;
+			else if (difY < -v) incY = -v;
+			
+			viewport->moveViewport(incX, incY, 
+				game->getGSM()->getWorld()->getWorldWidth(), 
+				game->getGSM()->getWorld()->getWorldHeight());
+		}
+		else {
+			viewport->moveViewport(player.getPhysicalProperties()->getVelocityX(), 
+				player.getPhysicalProperties()->getVelocityY(), 
+				game->getGSM()->getWorld()->getWorldWidth(), 
+				game->getGSM()->getWorld()->getWorldHeight());
+		}
+	}
 	// THEN UPDATE THE PLAYER SPRITE ANIMATION FRAME/STATE/ROTATION
 	player.updateSprite();
 

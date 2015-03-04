@@ -44,7 +44,9 @@ public:
 	int getViewportHeight()		{ return viewportHeight;		}
 	int getViewportOffsetX()	{ return viewportOffsetX;		}
 	int getViewportOffsetY()	{ return viewportOffsetY;		}
-
+	int getViewportCenterX()	{ return viewportX + (viewportWidth / 2);		}
+	int getViewportCenterY()	{ return viewportY + (viewportHeight / 2);	}
+		
 	// INLINED MUTATOR METHODS
 	void setScrollSpeedX(int initScrollSpeedX)
 	{ scrollSpeedX = initScrollSpeedX;		}
@@ -75,4 +77,5 @@ public:
 	bool areScreenCoordinatesInViewport(int x, int y);
 	void moveViewport(int incX, int incY,	int worldWidth, int worldHeight);
 	void toggleDebugView();
+	bool isInsideViewport(int x, int y);
 };

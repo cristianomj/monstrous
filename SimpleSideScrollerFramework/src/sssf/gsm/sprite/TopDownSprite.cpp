@@ -6,37 +6,39 @@ void TopDownSprite::updateSprite()
 	// CALL THE PARENT METHOD TO UPDATE ANIMATION
 	AnimatedSprite::updateSprite();
 
-	// AND NOW CALCULATE THE RADIANS
-	// FOR RENDERING THIS SPRITE
-	float vX = pp.getVelocityX();
-	float vY = pp.getVelocityY();
-	float epsilon = 0.00001f;
+	// MODIFIED: REMOVE ROTATION FROM PLAYER
 
-	// IF THE Y VELOCITY IS 0 WE HAVE TO BE CAREFUL DIVIDING
-	if (fabs(vY) < epsilon)
-	{
-		// IF X ISN'T MOVING EITHER, LEAVE IT WHAT IT IS
-		// AND PUT IT INTO AN IDLE STATE
-		if (fabs(vX) > epsilon)
-		{
-			if (vX < 0.0f)
-			{
-				rotationInRadians = PI;
-			}
-			else
-				rotationInRadians = 0.0f;
-		}
-	}
-	else
-	{
-		float tanTheta = vY/vX;
-		rotationInRadians = atan(tanTheta);
-		if (vX < 0.0f)
-		{
-			if (vY < 0.0f)
-				rotationInRadians += PI;
-			else
-				rotationInRadians -= PI;
-		}
-	}
+	//// AND NOW CALCULATE THE RADIANS
+	//// FOR RENDERING THIS SPRITE
+	//float vX = pp.getVelocityX();
+	//float vY = pp.getVelocityY();
+	//float epsilon = 0.00001f;
+
+	//// IF THE Y VELOCITY IS 0 WE HAVE TO BE CAREFUL DIVIDING
+	//if (fabs(vY) < epsilon)
+	//{
+	//	// IF X ISN'T MOVING EITHER, LEAVE IT WHAT IT IS
+	//	// AND PUT IT INTO AN IDLE STATE
+	//	if (fabs(vX) > epsilon)
+	//	{
+	//		if (vX < 0.0f)
+	//		{
+	//			rotationInRadians = PI;
+	//		}
+	//		else
+	//			rotationInRadians = 0.0f;
+	//	}
+	//}
+	//else
+	//{
+	//	float tanTheta = vY/vX;
+	//	rotationInRadians = atan(tanTheta);
+	//	if (vX < 0.0f)
+	//	{
+	//		if (vY < 0.0f)
+	//			rotationInRadians += PI;
+	//		else
+	//			rotationInRadians -= PI;
+	//	}
+	//}
 }

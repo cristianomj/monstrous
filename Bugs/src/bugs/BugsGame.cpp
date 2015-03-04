@@ -62,14 +62,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
                    int nCmdShow)
 {
 	// CREATE THE GAME
-	Game *bugsGame = new Game();
+	Game *monstrous = new Game();
 
 	// FIRST WE'LL SETUP THE DATA LOADER, SINCE IT MAY NEED TO READ
 	// IN DATA TO SETUP OTHER STUFF
 	BugsDataLoader *bugsDataLoader = new BugsDataLoader();
 	bugsDataLoader->initWinHandle(hInstance, nCmdShow);
-	bugsGame->setDataLoader(bugsDataLoader);
-	bugsDataLoader->loadGame(bugsGame, W_INIT_FILE);
+	monstrous->setDataLoader(bugsDataLoader);
+	bugsDataLoader->loadGame(monstrous, W_INIT_FILE);
 	
 	// WHAT WE SHOULD BE DOING HERE IS LOADING THE GAME DATA FROM FILES. THIS
 	// MEANS THE GUIS THEMSELVES AS WELL AS THE LEVELS. THAT WILL BE LEFT
@@ -77,37 +77,37 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
 	// LOAD THE GUI STUFF, AGAIN, NOTE THAT THIS SHOULD REALLY
 	// BE DONE FROM A FILE, NOT HARD CODED
-	bugsDataLoader->loadGUI(bugsGame, W_GUI_INIT_FILE);
+	bugsDataLoader->loadGUI(monstrous, W_GUI_INIT_FILE);
 
 	// SPECIFY WHO WILL HANDLE BUTTON EVENTS
 	BugsButtonEventHandler *bugsButtonHandler = new BugsButtonEventHandler();
-	GameGUI *gui = bugsGame->getGUI();
+	GameGUI *gui = monstrous->getGUI();
 	gui->registerButtonEventHandler((ButtonEventHandler*)bugsButtonHandler);
 
 	// SPECIFY WHO WILL HANDLE KEY EVENTS
 	BugsKeyEventHandler *bugsKeyHandler = new BugsKeyEventHandler();
-	bugsGame->getInput()->registerKeyHandler((KeyEventHandler*)bugsKeyHandler);
+	monstrous->getInput()->registerKeyHandler((KeyEventHandler*)bugsKeyHandler);
 
 	// SPECIFY WHO WILL HANDLE MOUSE EVENTS NOT RELATED TO THE GUI
 	BugsMouseEventHandler *bugsMouseHandler = new BugsMouseEventHandler();
-	bugsGame->getInput()->registerMouseHandler((MouseEventHandler*)bugsMouseHandler);
+	monstrous->getInput()->registerMouseHandler((MouseEventHandler*)bugsMouseHandler);
 
 	// THIS WILL HANDLE PHYSICS COLLISION EVENTS
 	BugsCollisionListener *bugsCollisionListener = new BugsCollisionListener();
-	bugsGame->getGSM()->getPhysics()->setCollisionListener(bugsCollisionListener);
+	monstrous->getGSM()->getPhysics()->setCollisionListener(bugsCollisionListener);
 
 	// START THE GAME LOOP
-	bugsGame->runGameLoop();
+	monstrous->runGameLoop();
 
 	// GAME'S OVER SHUTDOWN ALL THE STUFF WE CONSTRUCTED HERE
-	delete (WindowsOS*)bugsGame->getOS();
-	delete (WindowsInput*)bugsGame->getInput();
-	delete (WindowsTimer*)bugsGame->getTimer();
-	delete (DirectXGraphics*)bugsGame->getGraphics();
-	delete (BugsTextGenerator*)bugsGame->getText()->getTextGenerator();
+	delete (WindowsOS*)monstrous->getOS();
+	delete (WindowsInput*)monstrous->getInput();
+	delete (WindowsTimer*)monstrous->getTimer();
+	delete (DirectXGraphics*)monstrous->getGraphics();
+	delete (BugsTextGenerator*)monstrous->getText()->getTextGenerator();
 	delete bugsButtonHandler;
 	delete bugsKeyHandler;
-	delete bugsGame;
+	delete monstrous;
 
 	// AND RETURN
 	return 0;

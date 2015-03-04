@@ -24,16 +24,16 @@ static const int		W_TEXT_X = 200;
 static const int		W_TEXT_Y = 10;
 static const int		W_PATHFINDING_TEXT_X = 800;
 static const int		W_PATHFINDING_TEXT_Y = 10;
-static const wstring	W_ROTATION_IN_RADIANS = L"Ant Rotation in Radians: ";
-static const wstring	W_ROTATION_IN_DEGREES = L"Ant Rotation in Degrees: ";
+static const wstring	W_ROTATION_IN_RADIANS = L"Player Rotation in Radians: ";
+static const wstring	W_ROTATION_IN_DEGREES = L"Player Rotation in Degrees: ";
 static const wstring	W_RADIANS = L" radians";
 static const wstring	W_DEGREES = L" degrees";
 static const wstring	SIN_THETA = L"sin(theta): ";
 static const wstring	COS_THETA = L"cos(theta): ";
-static const wstring	W_ANT_CENTER_TEXT = L"Ant Center: (";
-static const wstring	W_ANT_GRID_TEXT = L"Ant Center Col,Row: (";
-static const wstring	W_ANT_LEFT_TOP_TEXT = L"Ant Left, Top: (";
-static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Ant Right, Bottom: (";
+static const wstring	W_ANT_CENTER_TEXT = L"Player Center: (";
+static const wstring	W_ANT_GRID_TEXT = L"Player Center Col,Row: (";
+static const wstring	W_ANT_LEFT_TOP_TEXT = L"Player Left, Top: (";
+static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Player Right, Bottom: (";
 
 void BugsTextGenerator::appendPathfindingText(Game *game)
 {
