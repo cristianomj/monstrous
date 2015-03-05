@@ -66,6 +66,18 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		{
 			game->getGraphics()->togglePathfindingPathShouldBeRendered();
 		}
+		if (input->isKeyDownForFirstTime(PLUS_KEY))	// MODIFIED: ADDING EVENT HANDKER FOR PLUS KEY
+		{
+			
+		}
+		if (input->isKeyDownForFirstTime(MINUS_KEY))
+		{
+
+		}
+		if (input->isKeyDownForFirstTime(R_KEY))
+		{
+
+		}
 
 		bool viewportMoved = false;
 		float viewportVx = 0.0f;

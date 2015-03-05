@@ -203,9 +203,10 @@ void BugsDataLoader::loadWorld(Game *game, wstring levelInitFile)
 
 	// AND LET'S ADD A BUNCH OF RANDOM JUMPING BOTS, FIRST ALONG
 	// A LINE NEAR THE TOP
+	AnimatedSpriteType *botSpriteType = spriteManager->getSpriteType(1);
 
 // UNCOMMENT THE FOLLOWING CODE BLOCK WHEN YOU ARE READY TO ADD SOME BOTS
-/*	for (int i = 2; i <= 26; i++)
+	for (int i = 2; i <= 26; i++)
 	{
 		float botX = 400.0f + (i * 100.0f);
 		float botY = 100.0f;
@@ -229,19 +230,19 @@ void BugsDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	// AND THEN A BUNCH LINED UP NEAR THE LEVEL EXIT
 	for (int i = 0; i < 14; i++)
 		makeRandomJumpingBot(game, botSpriteType, 1700.0f + (i*100.0f), 1300.0f);
-*/		
+		
 }
 
 void BugsDataLoader::makeRandomJumpingBot(Game *game, AnimatedSpriteType *randomJumpingBotType, float initX, float initY)
 {
 	SpriteManager *spriteManager = game->getGSM()->getSpriteManager();
 	Physics *physics = game->getGSM()->getPhysics();
-	RandomJumpingBot *bot = new RandomJumpingBot(physics, 30, 120, 40);
+	RandomJumpingBot *bot = new RandomJumpingBot(physics, 30, 120, 0);	// MODIFIED: CHANGED VELOCITY TO 0
 	physics->addCollidableObject(bot);
 	PhysicalProperties *pp = bot->getPhysicalProperties();
 	pp->setPosition(initX, initY);
 	bot->setSpriteType(randomJumpingBotType);
-	bot->setCurrentState(JUMPING);
+	bot->setCurrentState(IDLE);					// MODIFIED: START BOT AT IDDLE
 	bot->setAlpha(255);
 	spriteManager->addBot(bot);
 	bot->affixTightAABBBoundingVolume();

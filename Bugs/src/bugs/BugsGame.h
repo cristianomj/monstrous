@@ -80,11 +80,14 @@ const unsigned int P_KEY = (unsigned int)'P';
 const unsigned int T_KEY = (unsigned int)'T';
 const unsigned int L_KEY = (unsigned int)'L';
 const unsigned int F_KEY = (unsigned int)'F';
+const unsigned int R_KEY = (unsigned int)'R';
 const unsigned int UP_KEY = VK_UP;
 const unsigned int DOWN_KEY = VK_DOWN;
 const unsigned int LEFT_KEY = VK_LEFT;
 const unsigned int RIGHT_KEY = VK_RIGHT;
 const unsigned int SPACE_KEY = VK_SPACE;
+const unsigned int PLUS_KEY = VK_OEM_PLUS;
+const unsigned int MINUS_KEY = VK_OEM_MINUS;
 
 // THIS IS JUST FOR SHOWING HOW THE CURSOR CAN BE CHANGED
 const unsigned int C_KEY = (unsigned int)'C';

@@ -189,40 +189,68 @@ void SpriteManager::update(Game *game)
 	// MODIFIED: VIEWPORT FOLLOWS AVATAR
 	GameGUI *gui = game->getGUI();
 	Viewport *viewport = gui->getViewport();
+	GameInput  *input = game->getInput();
 
-	if (player.getCurrentState() != L"IDLE") {
+	int playerX = player.getBoundingVolume()->getCenterX();
+	int playerY = player.getBoundingVolume()->getCenterY();
+	int playerVx = player.getPhysicalProperties()->getVelocityX();
+	int playerVy = player.getPhysicalProperties()->getVelocityY();
 
-		int playerCenterX = player.getBoundingVolume()->getCenterX();
-		int playerCenterY = player.getBoundingVolume()->getCenterY();
+	int viewportX = viewport->getViewportX();
+	int viewportY = viewport->getViewportY();
+	int viewportWidth = viewport->getViewportWidth();
+	int viewportHeight = viewport->getViewportHeight();
+	int viewportCenterX = viewport->getViewportCenterX();
+	int viewportCenterY = viewport->getViewportCenterY();
+	
+	int worldWidth = game->getGSM()->getWorld()->getWorldWidth();
+	int worldHeight = game->getGSM()->getWorld()->getWorldHeight();
 
-		// MOVE VIEWPORT TO WHERE PLAYER IS
-		if (!viewport->isInsideViewport(playerCenterX, playerCenterY)) {
-			int viewportCenterX = viewport->getViewportCenterX();
-			int viewportCenterY = viewport->getViewportCenterY();
+	int incX = -1, incY = -1;
 
-			int incX = 0, incY = 0;
-			int v = 20;
-
-			int difX = playerCenterX - viewportCenterX;
-			int difY = playerCenterY - viewportCenterY;
-			
-			if (difX > v) incX = v;
-			else if (difX < -v) incX = -v;
-
-			if (difY > v) incY = v;
-			else if (difY < -v) incY = -v;
-			
-			viewport->moveViewport(incX, incY, 
-				game->getGSM()->getWorld()->getWorldWidth(), 
-				game->getGSM()->getWorld()->getWorldHeight());
-		}
-		else {
-			viewport->moveViewport(player.getPhysicalProperties()->getVelocityX(), 
-				player.getPhysicalProperties()->getVelocityY(), 
-				game->getGSM()->getWorld()->getWorldWidth(), 
-				game->getGSM()->getWorld()->getWorldHeight());
-		}
+	// IS PLAYER IS IN THE CENTER OF THE VIEWPORT
+	if (viewport->isPlayerCentered(playerX, playerY)) {
+		// FOLLOW PLAYER
+		if (player.getCurrentState() != L"IDLE")
+			viewport->moveViewport(playerVx, playerVy, worldWidth, worldHeight);
 	}
+	else {
+		// IF PLAYER IS FAR FROM CENTER
+		// MOVE VIEWPORT TORWARDS PLAYER
+		//if (playerX != viewportCenterX && playerY != viewportCenterY) {
+			// IF VIEWPORT IS ON THE FAR LEFT (X = 0)
+			// AND PLAYER IS MOVING LEFT
+			if (playerVx < 0 && viewportX <= 0) incX = 0;
+			else if (playerVx > 0 && (viewportX + viewportWidth >= worldWidth)) incX = 0;
+
+			// IF VIEWPORT IS ON THE FAR TOP (Y = 0)
+			// AND PLAYER IS MOVING UP
+			if (playerVy < 0 && viewportY <= 0) incY = 0;
+			else if (playerVy > 0 && (viewportY + viewportHeight >= worldHeight)) incY = 0;
+
+			if (incX != 0) {
+				if (playerX - viewportCenterX > 64) incX = 10;
+				else if (playerX - viewportCenterX < -64) incX = -10;
+			}
+			if (incY != 0) {
+				if (playerY - viewportCenterY > 64) incY = 10;
+				else if (playerY - viewportCenterY < -64) incY = -10;
+			}
+
+			if (!(incX == 0 && incY == 0)) {
+
+				if (incX == -1) {
+					incX = 0;
+				}
+				if (incY == -1) {
+					incY = 0;
+				}
+
+				viewport->moveViewport(incX, incY, worldWidth, worldHeight);
+			}	
+		//}
+	}
+	
 	// THEN UPDATE THE PLAYER SPRITE ANIMATION FRAME/STATE/ROTATION
 	player.updateSprite();
 

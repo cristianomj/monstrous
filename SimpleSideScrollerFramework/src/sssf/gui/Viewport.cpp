@@ -177,11 +177,20 @@ void Viewport::toggleDebugView()
 	viewportToggled = !viewportToggled;
 }
 
+bool Viewport::isPlayerCentered(int x, int y)
+{
+	if (x < viewportX + (viewportWidth / 2) - 256) return false;
+	if (y < viewportY + (viewportHeight / 2) - 256) return false;
+	if (x > viewportX + (viewportWidth / 2) + 256) return false;
+	if (y > viewportY + (viewportHeight / 2) + 256) return false;
+	return true;
+}
+
 bool Viewport::isInsideViewport(int x, int y)
 {
-	if (x < viewportX + 128) return false;
-	if (y < viewportY + 128) return false;
-	if (x > (viewportX + viewportWidth - 128)) return false;
-	if (y > (viewportY + viewportHeight - 256)) return false;
+	if (x < viewportX + 64) return false;
+	if (y < viewportY + 64) return false;
+	if (x > viewportX + viewportWidth - 64) return false;
+	if (y > viewportY + viewportHeight - 64) return false;
 	return true;
 }
