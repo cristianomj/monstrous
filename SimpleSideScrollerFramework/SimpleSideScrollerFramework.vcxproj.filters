@@ -146,9 +146,6 @@
     <ClCompile Include="src\sssf\gui\Cursor.cpp">
       <Filter>src\sssf\gui</Filter>
     </ClCompile>
-    <ClCompile Include="src\sssf\gui\GameGUI.cpp">
-      <Filter>src\sssf\gui</Filter>
-    </ClCompile>
     <ClCompile Include="src\sssf\gui\ScreenGUI.cpp">
       <Filter>src\sssf\gui</Filter>
     </ClCompile>
@@ -181,6 +178,11 @@
     </ClCompile>
     <ClCompile Include="src\sssf\platforms\Windows\WindowsTimer.cpp">
       <Filter>src\sssf\platforms\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="QuadTreeNode.cpp" />
+    <ClCompile Include="src\sssf\gui\GameGUI.cpp">
+      <Filter>src\sssf\gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -289,9 +291,6 @@
     <ClInclude Include="src\sssf\gui\Cursor.h">
       <Filter>src\sssf\gui</Filter>
     </ClInclude>
-    <ClInclude Include="src\sssf\gui\GameGUI.h">
-      <Filter>src\sssf\gui</Filter>
-    </ClInclude>
     <ClInclude Include="src\sssf\gui\OverlayImage.h">
       <Filter>src\sssf\gui</Filter>
     </ClInclude>
@@ -345,6 +344,11 @@
     </ClInclude>
     <ClInclude Include="src\sssf\platforms\Windows\WindowsTimer.h">
       <Filter>src\sssf\platforms\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="QuadTreeNode.h" />
+    <ClInclude Include="src\sssf\gui\GameGUI.h">
+      <Filter>src\sssf\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

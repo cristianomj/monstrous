@@ -35,7 +35,12 @@ RandomJumpingBot::RandomJumpingBot(	Physics *physics,
 
 	// AND START THE BOT OFF IN A RANDOM DIRECTION AND VELOCITY
 	// AND WITH RANDOM INTERVAL UNTIL IT THINKS AGAIN
-	this->pp.setVelocity(0, 0);
+
+	// MODIFIED: CHANGE INITIAL VELOCITY
+	int vX = pow(-1.0, rand() % 2);
+	int vY = pow(-1.0, rand() % 2);
+
+	this->pp.setVelocity(vX, vY);
 	
 	//pickRandomJump(physics);
 	pickRandomCyclesInRange();
@@ -112,11 +117,15 @@ void RandomJumpingBot::pickRandomJump(Physics *physics)
 	float randomAngleInRadians = (randomReal * PI/6.0f) + (PI*2.5f/6.0f);
 
 	// NOW WE CAN SCALE OUR X AND Y VELOCITIES
-	float jumpVelocity = (float)maxVelocity;
+	/*float jumpVelocity = (float)maxVelocity;
 	float jumpVelocityX = jumpVelocity * cos(randomAngleInRadians);
 	float jumpVelocityY = -jumpVelocity * sin(randomAngleInRadians);
-	pp.setVelocity(jumpVelocityX, jumpVelocityY);
-//	pp.setVelocity(0.0f, jumpVelocity);
+	pp.setVelocity(jumpVelocityX, jumpVelocityY);*/
+	
+	// MODIFIED: ^ COMMENTED THAT AND ADD THIS
+	int vX = pow(-1.0, rand() % 2);
+	int vY = pow(-1.0, rand() % 2);
+	pp.setVelocity(vX, vY);
 }
 
 /*

@@ -201,35 +201,35 @@ void BugsDataLoader::loadWorld(Game *game, wstring levelInitFile)
 	player->setOnTileLastFrame(false);
 	player->affixTightAABBBoundingVolume();
 
-	// AND LET'S ADD A BUNCH OF RANDOM JUMPING BOTS, FIRST ALONG
-	// A LINE NEAR THE TOP
-	AnimatedSpriteType *botSpriteType = spriteManager->getSpriteType(1);
+	//// AND LET'S ADD A BUNCH OF RANDOM JUMPING BOTS, FIRST ALONG
+	//// A LINE NEAR THE TOP
+	//AnimatedSpriteType *botSpriteType = spriteManager->getSpriteType(1);
 
-// UNCOMMENT THE FOLLOWING CODE BLOCK WHEN YOU ARE READY TO ADD SOME BOTS
-	for (int i = 2; i <= 26; i++)
-	{
-		float botX = 400.0f + (i * 100.0f);
-		float botY = 100.0f;
-		makeRandomJumpingBot(game, botSpriteType, botX, botY);
-	}
+	//// UNCOMMENT THE FOLLOWING CODE BLOCK WHEN YOU ARE READY TO ADD SOME BOTS
+	//for (int i = 2; i <= 26; i++)
+	//{
+	//	float botX = 400.0f + (i * 100.0f);
+	//	float botY = 100.0f;
+	//	makeRandomJumpingBot(game, botSpriteType, botX, botY);
+	//}
 
-	// AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
-	makeRandomJumpingBot(game, botSpriteType, 400, 100);
-	makeRandomJumpingBot(game, botSpriteType, 200, 400);
-	makeRandomJumpingBot(game, botSpriteType, 400, 400);
-	makeRandomJumpingBot(game, botSpriteType, 800, 700);
-	makeRandomJumpingBot(game, botSpriteType, 900, 700);
-	makeRandomJumpingBot(game, botSpriteType, 1000, 700);
-	makeRandomJumpingBot(game, botSpriteType, 100, 1000);
-	makeRandomJumpingBot(game, botSpriteType, 300, 1000);	
-	makeRandomJumpingBot(game, botSpriteType, 500, 1000);
-	makeRandomJumpingBot(game, botSpriteType, 100, 1400);
-	makeRandomJumpingBot(game, botSpriteType, 400, 1400);	
-	makeRandomJumpingBot(game, botSpriteType, 700, 1400);
+	//// AND THEN STRATEGICALLY PLACED AROUND THE LEVEL
+	//makeRandomJumpingBot(game, botSpriteType, 400, 100);
+	//makeRandomJumpingBot(game, botSpriteType, 200, 400);
+	//makeRandomJumpingBot(game, botSpriteType, 400, 400);
+	//makeRandomJumpingBot(game, botSpriteType, 800, 700);
+	//makeRandomJumpingBot(game, botSpriteType, 900, 700);
+	//makeRandomJumpingBot(game, botSpriteType, 1000, 700);
+	//makeRandomJumpingBot(game, botSpriteType, 100, 1000);
+	//makeRandomJumpingBot(game, botSpriteType, 300, 1000);	
+	//makeRandomJumpingBot(game, botSpriteType, 500, 1000);
+	//makeRandomJumpingBot(game, botSpriteType, 100, 1400);
+	//makeRandomJumpingBot(game, botSpriteType, 400, 1400);	
+	//makeRandomJumpingBot(game, botSpriteType, 700, 1400);
 
-	// AND THEN A BUNCH LINED UP NEAR THE LEVEL EXIT
-	for (int i = 0; i < 14; i++)
-		makeRandomJumpingBot(game, botSpriteType, 1700.0f + (i*100.0f), 1300.0f);
+	//// AND THEN A BUNCH LINED UP NEAR THE LEVEL EXIT
+	//for (int i = 0; i < 14; i++)
+	//	makeRandomJumpingBot(game, botSpriteType, 1700.0f + (i*100.0f), 1300.0f);
 		
 }
 

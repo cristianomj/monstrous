@@ -164,6 +164,11 @@ void SpriteManager::unloadSprites()
 
 Bot* SpriteManager::removeBot(Bot *botToRemove)
 {
+	if (!botToRemove) {
+		if (bots.size() >= 10) {
+			for (int i = 0; i < 10; i++) bots.pop_back();
+		}
+	}
 	return NULL;
 	// @TODO - WE'LL DO THIS LATER WHEN WE LEARN MORE ABOUT MEMORY MANAGEMENT
 }
@@ -262,5 +267,30 @@ void SpriteManager::update(Game *game)
 		bot->think(game);
 		bot->updateSprite();
 		botIterator++;
+	}
+}
+
+void SpriteManager::makeRandomBot(Game *game, AnimatedSpriteType *randomJumpingBotType, float initX, float initY)
+{
+	Physics *physics = game->getGSM()->getPhysics();
+	RandomJumpingBot *bot = new RandomJumpingBot(physics, 30, 120, 1);	// MODIFIED: CHANGED VELOCITY TO 0
+	physics->addCollidableObject(bot);
+	PhysicalProperties *pp = bot->getPhysicalProperties();
+	pp->setPosition(initX, initY);
+	bot->setSpriteType(randomJumpingBotType);
+	bot->setCurrentState(L"IDLE");					// MODIFIED: START BOT AT IDDLE
+	bot->setAlpha(255);
+	addBot(bot);
+	bot->affixTightAABBBoundingVolume();
+}
+
+void SpriteManager::resetBots(void)
+{
+	for (list<Bot*>::iterator it = bots.begin();
+		it != bots.end(); it++)
+	{
+		int x = 128 + rand() % 3000;
+		int y = 128 + rand() % 3000;
+		(*it)->getPhysicalProperties()->incX(200);
 	}
 }

@@ -14,6 +14,8 @@
     <Text Include="src\sssf_VS\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="QuadTreeNode.cpp" />
     <ClCompile Include="src\sssf\data_loader\GameDataLoader.cpp" />
     <ClCompile Include="src\sssf\game\Game.cpp" />
     <ClCompile Include="src\sssf\game\WStringTable.cpp" />
@@ -52,6 +54,8 @@
     <ClCompile Include="src\sssf_VS\stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="QuadTreeNode.h" />
     <ClInclude Include="src\sssf\data_loader\GameDataLoader.h" />
     <ClInclude Include="src\sssf\game\Game.h" />
     <ClInclude Include="src\sssf\game\IllegalArgumentException.h" />

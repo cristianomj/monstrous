@@ -34,6 +34,7 @@ static const wstring	W_ANT_CENTER_TEXT = L"Player Center: (";
 static const wstring	W_ANT_GRID_TEXT = L"Player Center Col,Row: (";
 static const wstring	W_ANT_LEFT_TOP_TEXT = L"Player Left, Top: (";
 static const wstring	W_ANT_RIGHT_BOTTOM_TEXT = L"Player Right, Bottom: (";
+static const wstring	BOTS = L"BOTS IN THE GAME: (";
 
 void BugsTextGenerator::appendPathfindingText(Game *game)
 {

@@ -68,15 +68,25 @@ void BugsKeyEventHandler::handleKeyEvents(Game *game)
 		}
 		if (input->isKeyDownForFirstTime(PLUS_KEY))	// MODIFIED: ADDING EVENT HANDKER FOR PLUS KEY
 		{
-			
+			SpriteManager *spriteManager = game->getGSM()->getSpriteManager();
+			AnimatedSpriteType *botSpriteType = spriteManager->getSpriteType(1);
+
+			for (int i = 1; i <= 10; i++)
+			{
+				float botX = 128 + rand() % 3000;
+				float botY = 128 + rand() % 3000;
+				spriteManager->makeRandomBot(game, botSpriteType, botX, botY);
+			}
 		}
 		if (input->isKeyDownForFirstTime(MINUS_KEY))
 		{
-
+			SpriteManager *spriteManager = game->getGSM()->getSpriteManager();
+			spriteManager->removeBot(NULL);
 		}
 		if (input->isKeyDownForFirstTime(R_KEY))
 		{
-
+			SpriteManager *spriteManager = game->getGSM()->getSpriteManager();
+			spriteManager->resetBots();
 		}
 
 		bool viewportMoved = false;

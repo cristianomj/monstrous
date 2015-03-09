@@ -18,6 +18,7 @@
 #include "sssf\gsm\sprite\AnimatedSpriteType.h"
 #include "sssf\gsm\sprite\TopDownSprite.h"
 #include "sssf\gsm\ai\pathfinding\GridPathfinder.h"
+#include "sssf\gsm\ai\bots\RandomJumpingBot.h"
 
 class SpriteManager
 {
@@ -64,4 +65,7 @@ public:
 	void				setPathfinder(GridPathfinder *initPathfinder) { pathfinder = initPathfinder; }
 	void				unloadSprites();
 	void				update(Game *game);
+
+	void resetBots(void);
+	void makeRandomBot(Game *game, AnimatedSpriteType *randomJumpingBotType, float initX, float initY); // MODIFIED: MAKE BOTS
 };
